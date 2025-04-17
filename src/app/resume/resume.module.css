@@ -1,0 +1,819 @@
+.mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; /* Higher than the video and overlay */
+  }
+.centerdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .centertext {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .belowcentertext {
+    font-size: 14px;
+    color: #161616;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-weight: 200;
+    & :hover{
+        color: #00786f;
+    }
+  }
+  
+  /* Glitch effect */
+  .glitch {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+  }
+  
+  .glitch::before {
+    left: 1px;
+    text-shadow: -2px 0 #00786f;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  }
+  
+  .glitch::after {
+    left: 0px;
+    text-shadow: -2px 0 #00ff95, 2px 2px #00786f;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim-1 {
+    0% {
+      clip: rect(32px, 9999px, 90px, 0);
+    }
+    20% {
+      clip: rect(54px, 9999px, 66px, 0);
+    }
+    40% {
+      clip: rect(32px, 9999px, 72px, 0);
+    }
+    60% {
+      clip: rect(87px, 9999px, 53px, 0);
+    }
+    80% {
+      clip: rect(43px, 9999px, 96px, 0);
+    }
+    100% {
+      clip: rect(62px, 9999px, 79px, 0);
+    }
+  }
+  
+  @keyframes glitch-anim-2 {
+    0% {
+      clip: rect(65px, 9999px, 119px, 0);
+    }
+    20% {
+      clip: rect(25px, 9999px, 145px, 0);
+    }
+    40% {
+      clip: rect(112px, 9999px, 30px, 0);
+    }
+    60% {
+      clip: rect(88px, 9999px, 133px, 0);
+    }
+    80% {
+      clip: rect(12px, 9999px, 77px, 0);
+    }
+    100% {
+      clip: rect(53px, 9999px, 110px, 0);
+    }
+  }
+  .breadcrumb{
+    cursor: pointer;
+  }
+
+  .mouseanimate {
+    margin-top: -120px;
+    color: #00786f;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    animation: mouseMove 1.5s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes mouseMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ABOUT ME */
+
+.description{
+    margin:120px 200px;
+    color: #161616;
+}
+.aboutme {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+.aboutme::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 7px;
+  background-color: #c64f4f91;
+  z-index: -1;
+}
+
+.me{
+  margin-top: 2%;
+  font-size: 14px;
+  
+}
+.gridcss{
+  margin-top: 4%;
+  font-size: 14px;
+}
+.gridsapn{
+  color: #00786f;
+}
+
+.button{
+   margin-top: 4%;
+   display: flex;
+  background-color: #00786f;
+  width: 17%;
+  color: white;
+  padding: 10px;
+  justify-content: center;
+  font-size: 14px
+}
+
+
+
+/* coding skills */
+
+.skillname{
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.progresscircle{
+  width: 70% !important;
+  height: 70% !important;
+}
+
+
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 4rem 0;
+  max-width: 1000px;
+  margin-top: 12%;
+  margin-bottom: 12%;
+}
+
+.timelineContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timelineContainer::before {
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 0; /* Start with zero width */
+}
+
+.timelineItem {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  z-index: 2;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+}
+
+.timelineDot {
+  width: 15px;
+  height: 15px;
+  background-color: #00786F;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Start scaled down */
+  z-index: 2;
+}
+
+.timelineItem.odd .timelineDuration {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #161616;
+  width: 100%;
+}
+
+.timelineItem.odd .timelineContent {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #161616;
+  width: 100%;
+}
+
+.timelineItem.even .timelineContent {
+  position: absolute;
+  top: -4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #161616;
+  width: 100%;
+}
+
+.timelineItem.even .timelineDuration {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #161616;
+  width: 100%;
+}
+
+.timelineTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.timelineCompany {
+  font-size: 13px;
+  font-weight: 500;
+  color: #00786F;
+}
+
+.timelineLocation {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 2%;
+}
+
+/* Animations triggered by .animate class */
+.timelineContainer.animate::before {
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+.timelineContainer.animate .timelineItem {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+.timelineContainer.animate .timelineItem:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.timelineContainer.animate .timelineItem:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.timelineContainer.animate .timelineItem:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.timelineContainer.animate .timelineItem:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.timelineContainer.animate .timelineDot {
+  animation: popDot 0.5s ease-out forwards;
+}
+
+.timelineContainer.animate .timelineItem:nth-child(1) .timelineDot {
+  animation-delay: 0.2s;
+}
+.timelineContainer.animate .timelineItem:nth-child(2) .timelineDot {
+  animation-delay: 0.4s;
+}
+.timelineContainer.animate .timelineItem:nth-child(3) .timelineDot {
+  animation-delay: 0.6s;
+}
+.timelineContainer.animate .timelineItem:nth-child(4) .timelineDot {
+  animation-delay: 0.8s;
+}
+
+/* Animation Keyframes */
+@keyframes drawLine {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popDot {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+
+/* KNOWLEDGE */
+
+.knowledge{
+  margin-top: 30px;
+}
+.knowtext{
+  font-size: 14px;
+}
+
+
+/* CERTIFICATES */
+
+.card {
+  background-color: #fffdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 26px 16px;
+  box-shadow: 0 2px 4px rgba(83, 83, 83, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.2s ease; 
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 12px rgba(133, 133, 133, 0.2); /* Stronger shadow on hover */
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 17px;
+  color: #363636;
+}
+
+.carddesc {
+  font-size: 14px;
+  color: #6d6a6a;
+  margin-top: 4%;
+}
+
+.viewcertificate {
+  font-size: 15px;
+  font-weight: 900;
+  color: #00786f;
+}
+
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .mainContent {
+      min-height: 80vh;
+      padding: 1rem;
+  }
+
+  .centertext {
+      font-size: 2.5rem;
+  }
+
+  .belowcentertext {
+      font-size: 12px;
+  }
+
+  .mouseanimate {
+      margin-top: -80px;
+      font-size: 16px;
+  }
+
+  .description {
+      margin: 60px 90px;
+  }
+
+  .aboutme {
+      font-size: 14px;
+  }
+
+  .me,
+  .gridcss,
+  .knowtext {
+      font-size: 12px;
+  }
+
+  .button {
+      width: 30%;
+      font-size: 12px;
+      padding: 8px;
+  }
+
+  .skillname {
+      font-size: 12px;
+  }
+
+  .timeline {
+      padding: 2rem 0;
+      margin-top: 8%;
+      margin-bottom: 8%;
+  }
+
+  .timelineContainer {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .timelineItem {
+      padding: 0 0.5rem;
+  }
+
+  .timelineItem.odd .timelineDuration,
+  .timelineItem.even .timelineDuration {
+      font-size: 10px;
+  }
+
+  .timelineItem.odd .timelineContent,
+  .timelineItem.even .timelineContent {
+      font-size: 11px;
+  }
+
+  .timelineTitle {
+      font-size: 13px;
+  }
+
+  .timelineCompany {
+      font-size: 11px;
+  }
+
+  .timelineLocation {
+      font-size: 10px;
+  }
+
+  .timelineDot {
+      width: 12px;
+      height: 12px;
+  }
+
+  .timelineItem.odd .timelineDuration {
+      top: -2rem;
+  }
+
+  .timelineItem.odd .timelineContent {
+      top: 1rem;
+  }
+
+  .timelineItem.even .timelineContent {
+      top: -4rem;
+  }
+
+  .timelineItem.even .timelineDuration {
+      top: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .mainContent {
+      min-height: 87vh;
+      padding: 0.5rem;
+  }
+  .progresscircle{
+    width: 50% !important;
+    height: 50% !important;
+  }
+
+  .centerdiv {
+      padding: 0.5rem;
+  }
+
+  .centertext {
+      font-size: 50px;
+  }
+
+  .belowcentertext {
+      font-size: 10px;
+      margin-top: 0.3rem;
+  }
+
+  .glitch::before,
+  .glitch::after {
+      /* Reduce glitch effect intensity for performance */
+      animation-duration: 3s;
+  }
+
+  .mouseanimate {
+      margin-top: -50px;
+      font-size: 14px;
+  }
+
+  .description {
+      margin: 40px 30px;
+  }
+  .me{
+    margin-top: 30px;
+  }
+  .aboutme {
+      font-size: 13px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+  }
+
+  .aboutme::after {
+      height: 5px;
+      width: 25%;
+      margin-left: 138px;
+    
+  }
+
+  .me,
+  .gridcss,
+  .knowtext {
+      font-size: 11px;
+  }
+
+  .button {
+      width: 40%;
+      font-size: 11px;
+      padding: 6px;
+  }
+
+  .skillname {
+      font-size: 11px;
+      margin-top: 27px;
+  }
+
+  .timeline {
+      padding: 1.5rem 0;
+      margin-top: 6%;
+      margin-bottom: 6%;
+  }
+
+  .timelineContainer {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+  }
+
+  .timelineContainer::before {
+      top: 0;
+      left: 10px;
+      width: 2px;
+      height: 0;
+      transform: none;
+  }
+
+  .timelineContainer.animate::before {
+      animation: drawVerticalLine 1.5s ease-out forwards;
+  }
+
+  @keyframes drawVerticalLine {
+      to {
+          height: 100%;
+      }
+  }
+
+  .timelineItem {
+      flex: none;
+      width: 100%;
+      text-align: left;
+      padding: 1rem 0;
+      transform: translateX(20px);
+  }
+
+  .timelineContainer.animate .timelineItem {
+      animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+
+  @keyframes slideInFromLeft {
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  .timelineDot {
+      width: 10px;
+      height: 10px;
+      left: 5px;
+      top: 20px;
+      transform: translate(0, 0) scale(0);
+  }
+
+  .timelineContainer.animate .timelineDot {
+      animation: popDotMobile 0.5s ease-out forwards;
+  }
+
+  @keyframes popDotMobile {
+      to {
+          transform: translate(0, 0) scale(1);
+      }
+  }
+
+  .timelineItem.odd .timelineDuration,
+  .timelineItem.even .timelineDuration {
+      position: static;
+      transform: none;
+      font-size: 10px;
+      margin-left: 20px;
+  }
+
+  .timelineItem.odd .timelineContent,
+  .timelineItem.even .timelineContent {
+      position: static;
+      transform: none;
+      font-size: 10px;
+      margin-left: 20px;
+      width: auto;
+  }
+
+  .timelineTitle {
+      font-size: 12px;
+  }
+
+  .timelineCompany {
+      font-size: 10px;
+  }
+
+  .timelineLocation {
+      font-size: 9px;
+  }
+
+  .timelineItem.odd,
+  .timelineItem.even {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+  .cardTitle {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .carddesc {
+    font-size: 13px;
+  }
+  
+  .viewcertificate {
+    font-size: 13px;
+
+  }
+}
+
+@media (max-width: 320px) {
+  .mainContent {
+      min-height: 89vh;
+      padding: 0.3rem;
+  }
+
+  .centertext {
+      font-size: 35px;
+  }
+
+  .belowcentertext {
+      font-size: 9px;
+  }
+
+  .glitch::before,
+  .glitch::after {
+      display: none; /* Disable glitch effect for performance */
+  }
+
+  .mouseanimate {
+      margin-top: -40px;
+      font-size: 12px;
+  }
+
+  .description {
+      margin: 30px 30px;
+  }
+
+  .aboutme {
+      font-size: 13px;
+  }
+
+  .aboutme::after {
+    height: 4px;
+    width: 32%;
+    margin-left: 89px;
+  
+}
+
+  .me,
+  .gridcss,
+  .knowtext {
+      font-size: 10px;
+  }
+
+  .button {
+      width: 50%;
+      font-size: 10px;
+      padding: 5px;
+  }
+
+  .skillname {
+      font-size: 10px;
+      margin-top: 20px;
+  }
+
+  .timeline {
+      padding: 1rem 0;
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }
+
+  .timelineItem {
+      padding: 0.8rem 0;
+  }
+
+  .timelineDot {
+      width: 8px;
+      height: 8px;
+      left: 6px;
+      top: 18px;
+  }
+
+  .timelineItem.odd .timelineDuration,
+  .timelineItem.even .timelineDuration {
+      font-size: 9px;
+      margin-left: 15px;
+  }
+
+  .timelineItem.odd .timelineContent,
+  .timelineItem.even .timelineContent {
+      font-size: 9px;
+      margin-left: 15px;
+  }
+
+  .timelineTitle {
+      font-size: 11px;
+  }
+
+  .timelineCompany {
+      font-size: 9px;
+  }
+
+  .timelineLocation {
+      font-size: 8px;
+  }
+  .cardTitle {
+
+    font-size: 14px;
+  }
+  
+  .carddesc {
+    font-size: 12px;
+  }
+  
+  .viewcertificate {
+    font-size: 12px;
+
+  }
+}

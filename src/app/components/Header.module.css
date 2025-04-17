@@ -1,0 +1,147 @@
+body {
+    overflow-x: hidden;
+}
+
+.headerTop {
+    padding: 45px 80px 15px;
+    color: rgb(65, 63, 63);
+    position: relative;
+    z-index: 100;
+    position: fixed;
+    background-color: white;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 30px;   
+}
+
+.nav {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.navlinks:hover {
+    color: #00786F;
+}
+
+.contactlink {
+    border: 0.5px solid rgb(65, 63, 63);
+    padding: 10px 30px;
+    margin-top: -10px;
+    &:hover {
+        background-color: #00786F;
+        border: 0.5px solid #00786F;
+        color: white;
+    }
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00786F;
+}
+
+.hamburgerContainer {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.hamburgerIcon, .closeIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: rotate(0);
+}
+
+.hamburgerIcon.active {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+.closeIcon.active {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+/* Mobile Menu Styles */
+.mobileMenu {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    padding: 80px 40px 120px 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 99;
+    transform: translateX(0%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+ 
+    margin: 0px 50px;
+}
+
+.mobileMenu.menuOpen {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobileMenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobileMenu a {
+    color: rgb(65, 63, 63);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.mobileMenu li:last-child a {
+    border: 0.5px solid rgb(212, 210, 210);
+    padding: 10px 30px;
+    display: inline-block;
+}
+
+.mobileMenu li:last-child a:hover {
+    background-color: #00786F;
+    border: 0.5px solid #00786F;
+    color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .mobileHidden {
+        display: none;
+    }
+    
+    .navContainer {
+        display: none;
+    }
+    
+    .headerTop {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobileMenu {
+        display: none;
+    }
+}
+
+
+
+
