@@ -116,12 +116,7 @@ export default function Page() {
                     </span>
                   </div>
                 </div>
-                <p className={`${styles.sitename} mt-3 text-center text-lg font-semibold text-white`}>
-                  {item.name}
-                </p>
-                <p className="text-center mt-2 text-sm font-medium text-gray-300">
-                  {item.description}
-                </p>
+               
               </a>
             </div>
           ))}
