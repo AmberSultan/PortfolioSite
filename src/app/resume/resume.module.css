@@ -5,7 +5,7 @@
     align-items: center;
     min-height: 100vh;
     position: relative;
-    z-index: 1; /* Higher than the video and overlay */
+    z-index: 1;
   }
 .centerdiv {
     display: flex;
@@ -130,6 +130,8 @@
 
 
 /* ABOUT ME */
+
+
 
 .description{
     margin:120px 200px;

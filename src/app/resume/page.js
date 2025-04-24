@@ -13,8 +13,6 @@ import { useRef, useEffect, useState } from "react";
 
 export default function Page() {
 
-
-  // Skills data with percentages
   const codingSkills = [
     { name: "HTML/CSS", percentage: 95 },
     { name: "React JS", percentage: 90 },
