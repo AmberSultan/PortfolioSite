@@ -172,10 +172,10 @@
 
 .overlay {
   position: absolute;
-  top: 15;
-  left: 15;
+  top: 15px;
+  left: 15px;
   width: 90%;
-  height: 75%;
+  height: 82%;
   background-color: #007870ef;
   opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
@@ -183,6 +183,7 @@
   align-items: center;
   justify-content: center;
   /* border-radius: 0.5rem; */
+  z-index: 10;
 }
 
 .hoveritem:hover .overlay {
@@ -193,6 +194,14 @@
   color: white;
   font-size: 18px;
 }
+
+
+
+
+
+
+
+
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
