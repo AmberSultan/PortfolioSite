@@ -153,14 +153,12 @@
 }
 .sitename{
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 500;
   margin-top: 10px;
   text-align: center;
+  color: #444444;
 }
 
-/* portfolio.module.css */
-
-/* Ensure the parent container is positioned relatively for absolute positioning of the overlay */
 .hoveritem {
   position: relative;
 }

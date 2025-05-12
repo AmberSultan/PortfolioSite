@@ -11,45 +11,59 @@ import Image from "next/image";
 const portfolioItems = [
   {
     id: 1,
+    src: "/carrental.png",
+    link: "https://go-drive-swart.vercel.app/",
+    alt: "Project 1",
+    name: "GoDrive: Rent a Car",
+  },
+  {
+    id: 2,
     src: "/travel.png",
     link: "https://city-guides-pk.vercel.app/",
     alt: "Project 1",
     name: "Travel Troop: City Guides",
   },
   {
-    id: 2,
+    id: 3,
     src: "/music.png",
     link: "https://melody-mentor.vercel.app/",
     alt: "Project 2",
     name: "Music Melody: Learn Music",
   },
   {
-    id: 3,
+    id: 4,
     src: "/pakistan.png",
     link: "https://pakistan-kappa.vercel.app/",
     alt: "Project 3",
     name: "Pakistan: GSAP Animations",
   },
   {
-    id: 4,
+    id: 5,
     src: "/recipes.png",
     link: "https://recipe-book-bx84.vercel.app/",
     alt: "Project 1",
     name: "Recipe Book: Culinary Recipes",
   },
   {
-    id: 5,
+    id: 6,
     src: "/movie.png",
     link: "https://moviehub-mu.vercel.app/",
     alt: "Project 2",
     name: "MovieHUB: Film Discovery",
   },
   {
-    id: 6,
+    id: 7,
     src: "/drawing.png",
     link: "https://ambersultan.github.io/drawingDoodle/",
     alt: "Project 3",
     name: "Drawing Doodle: Creative Sketches",
+  },
+  {
+    id: 8,
+    src: "/pixel.png",
+    link: "https://ambersultan.github.io/PixelParadise/",
+    alt: "Project 3",
+    name: "Pixel Paradise: Pinboard Creations",
   },
 ];
 
@@ -101,7 +115,7 @@ export default function Page() {
                 <p className={styles.sitename}>
                   {item.name}
                 </p>
-                {/* Hover overlay */}
+                
                 <div className={styles.overlay}>
                   <div className={styles.link}>
                   <FaLink/>
