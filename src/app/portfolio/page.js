@@ -12,7 +12,7 @@ const portfolioItems = [
   {
     id: 1,
     src: "/smartcart.png",
-    link: "https://smartcart-lilac.vercel.app/",
+    link: "https://smartcart-website.vercel.app/home",
     alt: "Project 1",
     name: "Smart Cart: Effortless Grocery",
   },
