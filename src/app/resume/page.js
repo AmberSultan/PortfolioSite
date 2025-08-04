@@ -28,7 +28,7 @@ export default function Page() {
   // Experience data
   const experiences = [
     {
-      title: "Front-End Developer Intern",
+      title: "Front-End Developer",
       company: "TechHype",
       location: "Onsite",
       duration: "July 2024",
@@ -43,7 +43,7 @@ export default function Page() {
       title: "Front-End Developer",
       company: "Freelancing",
       location: "Remote",
-      duration: "January 2025 - February 2025",
+      duration: "January 2025",
     },
   ];
 
